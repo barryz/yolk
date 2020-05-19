@@ -256,6 +256,8 @@ func main() {
 		exitOnErr(fmt.Errorf("you must specify a source or destination import path to handle"))
 	}
 
+	initReplaceRules()
+
 	if err := filepath.Walk(*dir, handle); err != nil {
 		exitOnErr(err)
 	}
